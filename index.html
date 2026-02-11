@@ -30,42 +30,204 @@
       </div>
     </section>
 
+    <h1>Verktyg &amp; kompetenser</h1>
+
+    <section class="skills">
+      <span class="skill-pill">Autodesk Fusion</span>
+      <span class="skill-pill">Blender</span>
+      <span class="skill-pill">Claude Code</span>
+      <span class="skill-pill">Creo</span>
+      <span class="skill-pill">Figma</span>
+      <span class="skill-pill">GIT</span>
+      <span class="skill-pill">Illustrator</span>
+      <span class="skill-pill">Python</span>
+      <span class="skill-pill">Unreal Engine</span>
+      <span class="skill-pill">Visual Studio Code</span>
+    </section>
+
     <h1>Projekt</h1>
 
     <section class="project-grid">
 
-      <a href="appdesign.html" class="card">
+      <a href="#appdesign" class="card" data-project="appdesign">
         <img class="card-img" src="images/Group_15_(1).png" alt="Appdesign">
         <div class="card-title">Appdesign</div>
       </a>
 
-      <a href="hall-bench-waste-sorting.html" class="card">
-        <img class="card-img" src="images/ppenvitbakgrund_1.png" alt="Hallbänk med avfallssortering">
+      <a href="#hall-bench-waste-sorting" class="card" data-project="hall-bench-waste-sorting">
+        <img class="card-img" src="images/ppenvitbakgrund_1.png" alt="Hallbänk med avfallssortering" loading="lazy">
         <div class="card-title">Hallbänk med avfallssortering</div>
       </a>
 
-      <a href="bachelor-thesis-product-development.html" class="card">
-        <img class="card-img" src="images/yngve-enviroment.png" alt="Kandidatarbete produktutveckling">
+      <a href="#bachelor-thesis-product-development" class="card" data-project="bachelor-thesis-product-development">
+        <img class="card-img" src="images/yngve-enviroment.png" alt="Kandidatarbete produktutveckling" loading="lazy">
         <div class="card-title">Kandidatarbete produktutveckling</div>
       </a>
 
-      <a href="material-for-design.html" class="card">
-        <img class="card-img" src="images/lamp.png" alt="Material för design">
+      <a href="#material-for-design" class="card" data-project="material-for-design">
+        <img class="card-img" src="images/lamp.png" alt="Material för design" loading="lazy">
         <div class="card-title">Material för design</div>
       </a>
 
-      <a href="plywood-stool.html" class="card">
-        <img class="card-img" src="images/Group_20.png" alt="Plywoodpall">
+      <a href="#plywood-stool" class="card" data-project="plywood-stool">
+        <img class="card-img" src="images/Group_20.png" alt="Plywoodpall" loading="lazy">
         <div class="card-title">Plywoodpall</div>
       </a>
 
-      <a href="product-visualization.html" class="card">
-        <img class="card-img" src="images/Group_10.png" alt="Produktvisualisering">
+      <a href="#product-visualization" class="card" data-project="product-visualization">
+        <img class="card-img" src="images/Group_10.png" alt="Produktvisualisering" loading="lazy">
         <div class="card-title">Produktvisualisering</div>
       </a>
 
     </section>
 
   </div>
+
+  <!-- Project overlay -->
+  <div class="overlay-backdrop" id="overlay-backdrop">
+    <div class="overlay-content">
+      <button class="overlay-close" aria-label="Stäng">&times;</button>
+
+      <div class="project-overlay" id="project-appdesign">
+        <header class="project-header">
+          <h1>Appdesign</h1>
+        </header>
+        <section class="project-meta">
+          <dl>
+            <dt>Beskrivning</dt>
+            <dd>Hugo är en tjänst som erbjuder leverans av föremål som till exempel verktyg. Med hjälp av Hugo kan privatpersoner hyra ut saker till varandra istället för att köpa nytt. Genom att använda autonoma robotar för leveranser kan användare enkelt hämta och lämna sakerna på platser och tider som passar dem. Bokning och uthyrning av föremål hanteras via en interaktiv app. Syftet med detta projekt var att utveckla och utvärdera en prototyp av denna app i Figma. Appen skulle bygga på ett scenario som handlar om en användare som behöver verktyg för att renovera sin lägenhet och därför registrerar sig på delningstjänsten. User storys och storymapping användes för att skapa en low-fidelity prototyp. Denna låg till grund för en high-fidelity prototyp som utvärderades med hjälp av användartester.</dd>
+            <dt>Startdatum</dt>
+            <dd>Augusti 2024</dd>
+            <dt>Slutdatum</dt>
+            <dd>December 2024</dd>
+          </dl>
+        </section>
+        <section class="gallery">
+          <img src="images/Group_15_(1).png" alt="Appdesign - bild 1" loading="lazy">
+          <img src="images/Group_23.png" alt="Appdesign - bild 2" loading="lazy">
+          <img src="images/Group_24.png" alt="Appdesign - bild 3" loading="lazy">
+        </section>
+      </div>
+
+      <div class="project-overlay" id="project-hall-bench-waste-sorting">
+        <header class="project-header">
+          <h1>Hallbänk med avfallssortering</h1>
+        </header>
+        <section class="project-meta">
+          <dl>
+            <dt>Beskrivning</dt>
+            <dd>Sorteringsbänken är en hallbänk med inbyggd, dold avfallssortering. Bänken är designad för att vara både en praktisk möbel och en lösning för att förvara och sortera avfall. Genom att komplettera den befintliga sorteringen i hemmet med mer sorteringsutrymme kan avfallsorteringen underlättas.</dd>
+            <dt>Startdatum</dt>
+            <dd>Augusti 2024</dd>
+            <dt>Slutdatum</dt>
+            <dd>December 2024</dd>
+          </dl>
+        </section>
+        <section class="gallery">
+          <img src="images/ppenvitbakgrund_1.png" alt="Hallbänk - öppen vy" loading="lazy">
+          <div class="content-row">
+            <div class="text">
+              <p>Bänken har tre löstagbara hinkar som rymmer ca 20 liter var. Hinkarna kan plockas ur bänken och transporteras var och en för sig om endast en hink är full.</p>
+              <p>Vid behov kan alla hinkar lyftas ur samtidigt med hjälp av en ram med handtag. Hinkramen gör det möjligt att bära alla hinkar i en hand, vilket underlättar transporten av färdigsorterade sopor till soprum eller återvinningsstation.</p>
+            </div>
+            <div class="image">
+              <img src="images/frame.png" alt="Hinkram" loading="lazy">
+            </div>
+          </div>
+          <img src="images/closed_bench.png" alt="Hallbänk - stängd" loading="lazy">
+        </section>
+      </div>
+
+      <div class="project-overlay" id="project-bachelor-thesis-product-development">
+        <header class="project-header">
+          <h1>Kandidatarbete produktutveckling</h1>
+        </header>
+        <section class="project-meta">
+          <dl>
+            <dt>Beskrivning</dt>
+            <dd>Kandidatarbetet fokuserade på hur olika sammanfogningsmetoder påverkar möjligheten att upcycla stolar. Tre stolar demonterades för att identifiera vilka typer av sammanfogningar som använts och vilka utmaningar det innebär för återbruk. Alternativa sammanfogningsmetoder föreslogs för att stolarna enklare skulle kunna upcyclas. Genom att använda metoder som möjliggör enkel demontering kan fler delar återanvändas, vilket bidrar till en mer hållbar och resurssnål designprocess. En av stolarna monterades sedan ihop igen med de föreslagna reversibla sammanfogningsmetoderna.</dd>
+            <dt>Startdatum</dt>
+            <dd>Jan 2024</dd>
+            <dt>Slutdatum</dt>
+            <dd>Jun 2024</dd>
+          </dl>
+        </section>
+        <section class="gallery">
+          <img src="images/yngve-enviroment.png" alt="Kandidatarbete - stol i miljö" loading="lazy">
+          <img src="images/Group_18.png" alt="Kandidatarbete - detaljer" loading="lazy">
+        </section>
+      </div>
+
+      <div class="project-overlay" id="project-material-for-design">
+        <header class="project-header">
+          <h1>Material för design</h1>
+        </header>
+        <section class="project-meta">
+          <dl>
+            <dt>Beskrivning</dt>
+            <dd>Detta grupprojekt handlade om att kombinera minst två olika material i en produkt som kan kopplas till begreppet tid. Projektet resulterade i en bordslampa med mekanisk ljusreglering. Ljusupplevelsen och formen kan regleras genom att ändra position på två trattar som är placerade i botten och toppen av lampskärmen. Med hjälp av snören går det därför att styra hur mycket ljus som släpps ut och reflekteras. Detta gör att lampan kan anpassas efter tid på dygnet eller året. Lampan är gjord i stål och björkfaner. I lampskärmen hålls cylindrar av faner på plats med hjälp av metallskenor.</dd>
+            <dt>Startdatum</dt>
+            <dd>aug 2023</dd>
+            <dt>Slutdatum</dt>
+            <dd>dec 2023</dd>
+          </dl>
+        </section>
+        <section class="gallery">
+          <img src="images/lamp.png" alt="Lampa i miljö" loading="lazy">
+          <img src="images/Group_19_(1).png" alt="Lampa - detaljer" loading="lazy">
+        </section>
+      </div>
+
+      <div class="project-overlay" id="project-plywood-stool">
+        <header class="project-header">
+          <h1>Plywoodpall</h1>
+        </header>
+        <section class="project-meta">
+          <dl>
+            <dt>Beskrivning</dt>
+            <dd>I det här projektet fick vi i uppgift att designa och tillverka en pall i materialet plywood. Innan vi började tillverka pallen gjordes prototyper av sitsen i blåskum för att testa olika sittstorlekar. Både sitsen och benen är tillverkade av ihoplimmade plywoodskivor i en CNC-fräs. Pallens ben består av två bågformade delar som sammanfogats med en halv-i-halv-fog. Sitsen har fyra rampamuffar som benen är fästa i med skruvar för att pallen ska vara stabil. Pallen är oljad med en mörkare hårdvaxolja.</dd>
+            <dt>Startdatum</dt>
+            <dd>Oktober 2024</dd>
+            <dt>Slutdatum</dt>
+            <dd>December 2024</dd>
+          </dl>
+        </section>
+        <section class="gallery">
+          <img src="images/Group_20.png" alt="Plywoodpall - översikt" loading="lazy">
+          <img src="images/466381253_1008332327827987_2985701282852095501_n_2.png" alt="Plywoodpall - foto" loading="lazy">
+          <img src="images/Group_21.png" alt="Plywoodpall - detaljer" loading="lazy">
+        </section>
+      </div>
+
+      <div class="project-overlay" id="project-product-visualization">
+        <header class="project-header">
+          <h1>Produktvisualisering</h1>
+        </header>
+        <section class="project-meta">
+          <dl>
+            <dt>Beskrivning</dt>
+            <dd>Den här portfolion beskriver ett projekt genomfört i kursen Produktvisualisering. Projektets syfte har varit att genomföra en nydesign av en befintlig produkt. Mitt arbete har utgått från en analog väckarklocka. I portfolion redovisas projektets arbetsprocess från idé till färdigt resultat, inklusive moodboard, idéskisser, konceptutveckling, valt koncept, lermodell och slutliga visualiseringar. Jag gjorde många enkla skisser på klockor utifrån olika grundformer och valde sen ut tre idéer att utveckla mer. Dessa tre förslag är de färglagda skisserna till vänster. Av de tre valdes sedan en slutgiltig design. Det valda konceptet är en väckarklocka med enkel form och lutande framsida.</dd>
+          </dl>
+        </section>
+        <section class="gallery">
+          <img src="images/Group_10.png" alt="Produktvisualisering - skisser" loading="lazy">
+          <img src="images/Group_8.png" alt="Produktvisualisering - koncept" loading="lazy">
+          <p class="gallery-text">Lermodellen är gjord av blåskum som täckts av techclay. Blåskummet tejpades innan det täcktes med lera.</p>
+          <img src="images/Group_9.png" alt="Produktvisualisering - lermodell" loading="lazy">
+        </section>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Stäng">&times;</button>
+    <button class="lightbox-prev" aria-label="Föregående">&#10094;</button>
+    <button class="lightbox-next" aria-label="Nästa">&#10095;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  </div>
+
+  <script src="main.js"></script>
 </body>
 </html>
