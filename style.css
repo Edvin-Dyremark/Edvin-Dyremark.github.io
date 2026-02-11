@@ -1,3 +1,24 @@
+/* ── Theme variables ── */
+:root {
+  --bg: #191919;
+  --bg-surface: #2a2a2a;
+  --text-primary: #fff;
+  --text-secondary: #ccc;
+  --text-muted: #999;
+  --text-dim: #666;
+  --shadow-card: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] {
+  --bg: #f5f5f5;
+  --bg-surface: #fff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #777;
+  --text-dim: #aaa;
+  --shadow-card: rgba(0, 0, 0, 0.08);
+}
+
 *,
 *::before,
 *::after {
@@ -12,9 +33,10 @@ html {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  background: #191919;
-  color: #fff;
+  background: var(--bg);
+  color: var(--text-primary);
   line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 body.no-scroll {
@@ -36,6 +58,36 @@ img {
   max-width: 960px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
+}
+
+/* ── Theme toggle ── */
+.theme-toggle {
+  float: right;
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
+  background: var(--text-dim);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin-top: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.theme-toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+[data-theme="light"] .theme-toggle::after {
+  transform: translateX(16px);
 }
 
 /* ── About section ── */
@@ -62,7 +114,7 @@ img {
 
 .about-bio p {
   margin-bottom: 0.75rem;
-  color: #ccc;
+  color: var(--text-secondary);
 }
 
 .about-bio a {
@@ -71,7 +123,7 @@ img {
 }
 
 .about-bio a:hover {
-  color: #fff;
+  color: var(--text-primary);
 }
 
 /* ── Section headings ── */
@@ -86,31 +138,16 @@ h2 {
   font-weight: 600;
 }
 
-/* ── Skills section ── */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 3rem;
-}
-
-.skill-pill {
-  background: #2a2a2a;
-  padding: 0.5rem 1.25rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
 /* ── Project grid ── */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .card {
-  background: #2a2a2a;
+  background: var(--bg-surface);
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -119,7 +156,7 @@ h2 {
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 24px var(--shadow-card);
 }
 
 .card-img {
@@ -132,6 +169,42 @@ h2 {
   padding: 0.75rem 1rem 1rem;
   font-size: 0.95rem;
   font-weight: 500;
+}
+
+/* ── Skills section ── */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.skill-pill {
+  background: var(--bg-surface);
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  transition: background 0.2s ease;
+}
+
+/* ── Contact section ── */
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+.contact a:hover {
+  color: var(--text-primary);
 }
 
 /* ── Project page ── */
@@ -151,12 +224,12 @@ h2 {
 }
 
 .project-meta dt {
-  color: #999;
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 
 .project-meta dd {
-  color: #ccc;
+  color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -164,22 +237,22 @@ h2 {
 /* ── Breadcrumb ── */
 .breadcrumb {
   font-size: 0.9rem;
-  color: #999;
+  color: var(--text-muted);
   margin-bottom: 2.5rem;
 }
 
 .breadcrumb a {
-  color: #ccc;
+  color: var(--text-secondary);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .breadcrumb a:hover {
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .breadcrumb span {
-  color: #666;
+  color: var(--text-dim);
   margin: 0 0.4rem;
 }
 
@@ -205,7 +278,7 @@ h2 {
 
 .content-row .text {
   flex: 1;
-  color: #ccc;
+  color: var(--text-secondary);
   line-height: 1.7;
 }
 
@@ -223,7 +296,7 @@ h2 {
 
 /* ── Inline text between images (product-visualization) ── */
 .gallery-text {
-  color: #ccc;
+  color: var(--text-secondary);
   line-height: 1.7;
   margin: 0.5rem 0;
 }
@@ -259,7 +332,7 @@ h2 {
 }
 
 .overlay-content {
-  background: #191919;
+  background: var(--bg);
   max-width: 960px;
   width: 100%;
   border-radius: 12px;
@@ -278,7 +351,7 @@ h2 {
   right: 1.25rem;
   background: none;
   border: none;
-  color: #999;
+  color: var(--text-muted);
   font-size: 2rem;
   cursor: pointer;
   line-height: 1;
@@ -286,7 +359,7 @@ h2 {
 }
 
 .overlay-close:hover {
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .project-overlay {
@@ -414,5 +487,10 @@ h2 {
   .lightbox-next {
     padding: 0.5rem 0.75rem;
     font-size: 1.25rem;
+  }
+
+  .contact {
+    flex-direction: column;
+    gap: 0.75rem;
   }
 }
