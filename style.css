@@ -229,23 +229,33 @@ h2 {
 }
 
 /* ── Project overlay ── */
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes overlaySlideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .overlay-backdrop {
+  display: none;
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.85);
   z-index: 100;
-  display: flex;
   justify-content: center;
   overflow-y: auto;
   padding: 2rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
 }
 
 .overlay-backdrop.active {
-  opacity: 1;
-  pointer-events: auto;
+  display: flex;
+  animation: overlayFadeIn 0.3s ease;
 }
 
 .overlay-content {
@@ -256,12 +266,10 @@ h2 {
   padding: 2.5rem 2rem;
   position: relative;
   margin: auto;
-  transform: translateY(40px);
-  transition: transform 0.3s ease;
 }
 
 .overlay-backdrop.active .overlay-content {
-  transform: translateY(0);
+  animation: overlaySlideUp 0.3s ease;
 }
 
 .overlay-close {
@@ -300,21 +308,21 @@ h2 {
 
 /* ── Lightbox ── */
 .lightbox {
+  display: none;
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.95);
   z-index: 200;
-  display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
 }
 
 .lightbox.active {
-  opacity: 1;
-  pointer-events: auto;
+  display: flex;
+  animation: overlayFadeIn 0.3s ease;
 }
 
 .lightbox-img {
