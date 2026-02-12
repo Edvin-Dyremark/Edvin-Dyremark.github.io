@@ -1,6 +1,6 @@
 /* ── Theme variables ── */
 :root {
-  --bg: #e8e0d4;
+  --bg: #f0ece7;
   --bg-surface: #fff;
   --text-primary: #1a1a1a;
   --text-secondary: #555;
@@ -376,18 +376,23 @@ h2 {
 }
 
 .project-overlay .gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
+  display: block;
+  columns: 2;
+  column-gap: 0.75rem;
+}
+
+.project-overlay .gallery > * {
+  break-inside: avoid;
+  margin-bottom: 0.75rem;
 }
 
 .project-overlay .gallery .content-row,
 .project-overlay .gallery .gallery-text {
-  grid-column: 1 / -1;
+  column-span: all;
 }
 
 .project-overlay .gallery:has(.content-row) {
-  grid-template-columns: 1fr;
+  columns: 1;
 }
 
 .project-overlay .gallery > img {
@@ -516,6 +521,6 @@ h2 {
   }
 
   .project-overlay .gallery {
-    grid-template-columns: 1fr;
+    columns: 1;
   }
 }
