@@ -1,6 +1,6 @@
 /* ── Theme variables ── */
 :root {
-  --bg: #f0ece7;
+  --bg: #f5f5f5;
   --bg-surface: #fff;
   --text-primary: #1a1a1a;
   --text-secondary: #555;
@@ -386,13 +386,8 @@ h2 {
   margin-bottom: 0.75rem;
 }
 
-.project-overlay .gallery .content-row,
 .project-overlay .gallery .gallery-text {
   column-span: all;
-}
-
-.project-overlay .gallery:has(.content-row) {
-  columns: 1;
 }
 
 .project-overlay .gallery > img {
