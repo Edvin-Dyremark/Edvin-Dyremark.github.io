@@ -1,5 +1,15 @@
 /* ── Theme variables ── */
 :root {
+  --bg: #f0ebe4;
+  --bg-surface: #fff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #777;
+  --text-dim: #aaa;
+  --shadow-card: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
   --bg: #191919;
   --bg-surface: #2a2a2a;
   --text-primary: #fff;
@@ -7,16 +17,6 @@
   --text-muted: #999;
   --text-dim: #666;
   --shadow-card: rgba(0, 0, 0, 0.4);
-}
-
-[data-theme="light"] {
-  --bg: #f5f5f5;
-  --bg-surface: #fff;
-  --text-primary: #1a1a1a;
-  --text-secondary: #555;
-  --text-muted: #777;
-  --text-dim: #aaa;
-  --shadow-card: rgba(0, 0, 0, 0.08);
 }
 
 *,
@@ -33,14 +33,14 @@ html {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  background: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.06) 0%, transparent 70%) fixed, var(--bg);
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.04) 0%, transparent 70%) fixed, var(--bg);
   color: var(--text-primary);
   line-height: 1.6;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-[data-theme="light"] body {
-  background: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.04) 0%, transparent 70%) fixed, var(--bg);
+[data-theme="dark"] body {
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.06) 0%, transparent 70%) fixed, var(--bg);
 }
 
 body.no-scroll {
@@ -85,18 +85,18 @@ img {
   border-color: var(--text-muted);
 }
 
-/* Dark mode (default): show sun, hide moon */
-.theme-toggle .icon-moon {
+/* Light mode (default): show moon, hide sun */
+.theme-toggle .icon-sun {
   display: none;
 }
 
-/* Light mode: show moon, hide sun */
-[data-theme="light"] .theme-toggle .icon-sun {
-  display: none;
-}
-
-[data-theme="light"] .theme-toggle .icon-moon {
+/* Dark mode: show sun, hide moon */
+[data-theme="dark"] .theme-toggle .icon-sun {
   display: block;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
 }
 
 /* ── About section ── */
@@ -380,19 +380,18 @@ h2 {
 }
 
 .project-overlay .gallery {
-  display: block;
-  columns: 2;
-  column-gap: 0.75rem;
-}
-
-.project-overlay .gallery > * {
-  break-inside: avoid;
-  margin-bottom: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
 }
 
 .project-overlay .gallery .content-row,
 .project-overlay .gallery .gallery-text {
-  column-span: all;
+  grid-column: 1 / -1;
+}
+
+.project-overlay .gallery:has(.content-row) {
+  grid-template-columns: 1fr;
 }
 
 .project-overlay .gallery > img {
@@ -521,6 +520,6 @@ h2 {
   }
 
   .project-overlay .gallery {
-    columns: 1;
+    grid-template-columns: 1fr;
   }
 }
